@@ -30,12 +30,12 @@ const Landing: React.FC = () => (
       <Hero src={landingImg} alt="Plataforma de estudos" />
 
       <ButtonsContainer>
-        <Button href="" type="study">
+        <Button to="/study" type="study">
           <Icon src={studyIcon} alt="Estudar" />
           Estudar
         </Button>
 
-        <Button href="" type="giveClasses">
+        <Button to="/give-classes" type="giveClasses">
           <Icon src={giveClassesIcon} alt="Dar aulas" />
           Dar aulas
         </Button>

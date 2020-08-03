@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link, LinkProps } from 'react-router-dom';
 
 import { Container as Wrapper } from '../../components/Wrapper/styles';
 
@@ -84,11 +85,11 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-interface ButtonProps {
+interface ButtonProps extends LinkProps {
   type: 'study' | 'giveClasses';
 }
 
-export const Button = styled.a<ButtonProps>`
+export const Button = styled(Link)<ButtonProps>`
   width: 30rem;
   height: 10.4rem;
   border-radius: 0.8rem;
