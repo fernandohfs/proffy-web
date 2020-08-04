@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
 
   body, input, button, textarea {
     font: 500 1.6rem Poppins;
+    color: ${Color.text.base};
   }
 
   @media (min-width: 700px) {
