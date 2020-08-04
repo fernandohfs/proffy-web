@@ -5,6 +5,21 @@ import { Container as Wrapper } from '../../components/Wrapper/styles';
 
 import Color from '../../styles/color';
 
+function getButtonBackgroundColorByType(type: string) {
+  switch (type) {
+    case 'study-default':
+      return Color.primary.lighter;
+    case 'study-hover': 
+      return Color.primary.light;
+    case 'giveClasses-default':
+      return Color.secundary.default;
+    case 'giveClasses-hover': 
+      return Color.secundary.dark;
+    default:
+      return Color.primary.default;
+  }
+}
+
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -104,10 +119,10 @@ export const Button = styled(Link)<ButtonProps>`
 
   transition: background-color 0.2s;
 
-  background: ${props => props.type === 'study' ? Color.primary.lighter : Color.secundary.default};
+  background: ${props => getButtonBackgroundColorByType(`${props.type}-default`)};
   
   &:hover {
-    background: ${props => props.type === 'study' ? Color.primary.light : Color.secundary.dark};
+    background: ${props => getButtonBackgroundColorByType(`${props.type}-hover`)};
   }
 
   @media (min-width: 1100px) {
@@ -117,6 +132,7 @@ export const Button = styled(Link)<ButtonProps>`
 
 export const Icon = styled.img`
   width: 4rem;
+  margin-right: 1.6rem;
 
   @media (min-width: 1100px) {
     margin-right: 3.4rem;
